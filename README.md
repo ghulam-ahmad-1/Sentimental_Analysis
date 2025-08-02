@@ -1,3 +1,33 @@
-<h1>Roberta Architecture :</h1>
-<p>Roberta (A Robustly Optimized BERT Pretraining Approach) is a language representation model introduced by Facebook AI in 2019. It is built upon the architecture of BERT (Bidirectional Encoder Representations from Transformers) and represents a significant advancement in natural language understanding. Roberta employs a similar transformer architecture, utilizing layers of self-attention mechanisms to capture contextual relationships in text data. However, what sets Roberta apart is its pretraining process, where it optimizes BERT's masked language model objective by training on longer sequences with larger batch sizes, enabling it to learn more robust linguistic features.</p>
-<p>Roberta addresses one of BERT's limitations by removing the "next sentence prediction" pretraining task and training on longer spans of text. This modification allows Roberta to better comprehend context and relationships within sentences. With a staggering 160 GB of text data for training, Roberta outperforms BERT on a wide range of benchmark tasks, achieving state-of-the-art results on several natural language processing tasks like question answering, text classification, and named entity recognition. Despite its significant improvements, Roberta's increased model size and training data requirements make it computationally expensive, limiting its accessibility to researchers and practitioners without ample resources.</p>
+# 🧠 RoBERTa-Based Sentiment Analysis
+
+A simple command-line tool for performing sentiment analysis using the pretrained **`cardiffnlp/twitter-roberta-base-sentiment`** model from Hugging Face. Optimized for analyzing social media text, short reviews, and comments.
+
+---
+
+## 📌 Features
+
+- Utilizes state-of-the-art pretrained RoBERTa transformer
+- Handles noisy text with user mentions and URLs
+- Predicts sentiment as **Positive**, **Neutral**, or **Negative**
+- Outputs probability scores for interpretability
+
+---
+
+## 🔍 How It Works
+
+1. **Input**: User provides a comment or review via terminal
+2. **Preprocessing**: Cleans mentions and links
+3. **Encoding**: Uses RoBERTa tokenizer
+4. **Prediction**: Model outputs class scores processed via `softmax`
+5. **Output**: Displays score per sentiment and predicted class
+
+---
+
+## 🧪 Example
+
+```bash
+Enter the Comment Or Review  : I love this product! Works perfectly.
+Negative 0.02
+Neutral 0.15
+Positive 0.83
+The Sentiment of the Comment is : Positive
